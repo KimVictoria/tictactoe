@@ -1,4 +1,14 @@
+let player1 = "X"
+let player2 = "O"
 
+let turns = 0
+
+let gameResult = false
+
+function performLogic(buttonId, tileId) {
+    $(buttonId).hide();
+    $(tileId).text(player)
+}
 
 
 
