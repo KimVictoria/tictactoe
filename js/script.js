@@ -1,14 +1,57 @@
-let player1 = "X"
-let player2 = "O"
+let player = "X"
 
 let turns = 0
 
 let gameResult = false
 
 function performLogic(buttonId, tileId) {
-    $(buttonId).hide();
-    $(tileId).text(player)
+    if (gameResult === false) {
+        $(buttonId).hide();
+        $(tileId).text(player)
+        changePlayer();
+        addTurns();
+    } else {
+        // ADD
+    }
+    
 }
+
+function changePlayer() {
+    if (player === "O") {
+        player = "X";
+    } else {
+        player = "O";
+    }
+    
+}
+
+function addTurns() {
+    turns = turns + 1;
+    if (turns === 9) {
+        gameResult = true;
+        $("h1").text("It's a draw!"); 
+    }
+}
+
+function endGame() {
+
+}
+
+function win(tileid1, tileid2, tileid3) {
+    let tileUno = $(tileid1).val();
+    let tileDos = $(tileid2).val();
+    let tileThres = $(tileid3).val();
+
+    if (tileUno === player && tileDos === player && tileThres === player) {
+        $("h1").html(player + " Won!");
+    }
+
+}
+
+
+
+
+
 
 
 
@@ -50,4 +93,3 @@ $("#button8").click(function() {
 $("#button9").click(function() {
     performLogic("#button9","#tile9");
 });
-
