@@ -25,7 +25,7 @@ In this unit, coders will create the classic game of tic tac toe in their browse
 - [x] Implement behavior that will change the title to "It's a draw!" and end the game by changing the boolean variable to true after 9 pieces are placed. Do this by writing a function that will add 1 to the current turns, and check if that counter has reached 9.
 
 #### Wrap
-- [ ] Push your changes!
+- [x] Push your changes!
 
 ## Day 2
 

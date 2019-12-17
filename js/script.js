@@ -8,6 +8,7 @@ function performLogic(buttonId, tileId) {
     if (gameResult === false) {
         $(buttonId).hide();
         $(tileId).text(player)
+        win("#tile1", "#tile2", "#tile3");
         changePlayer();
         addTurns();
     } else {
@@ -19,10 +20,9 @@ function performLogic(buttonId, tileId) {
 function changePlayer() {
     if (player === "O") {
         player = "X";
-    } else {
+    } else if (player ==="X") {
         player = "O";
-    }
-    
+    } 
 }
 
 function addTurns() {
@@ -34,19 +34,23 @@ function addTurns() {
 }
 
 function endGame() {
-
+    // ADD
 }
 
 function win(tileid1, tileid2, tileid3) {
-    let tileUno = $(tileid1).val();
-    let tileDos = $(tileid2).val();
-    let tileThres = $(tileid3).val();
+    let tileUno = $(tileid1).text();
+    let tileDos = $(tileid2).text();
+    let tileTres = $(tileid3).text();
 
-    if (tileUno === player && tileDos === player && tileThres === player) {
-        $("h1").html(player + " Won!");
+    if ((tileUno === player) && (tileDos === player) && (tileTres === player)) {
+        gameResult = true;
+        return player
+    } else {
+        console.log("no winner")
     }
-
+    console.log(tileUno, tileDos, tileTres);
 }
+
 
 
 
